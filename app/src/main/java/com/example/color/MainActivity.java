@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        spinner = (Spinner) findViewById(R.id.spinner);
+        spinner = findViewById(R.id.spinner);
         String[] colors = {"Red", "Green", "Blue", "Yellow", "Gray", "Purple", "Lime", "White", "Magenta", "Cyan"};
         final int[] colorInts = {Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.LTGRAY, Color.parseColor("#800080"), Color.parseColor("#00FF00"), Color.WHITE, Color.parseColor("#FF00FF"), Color.parseColor("#00FFFF")};
 
@@ -30,8 +30,10 @@ public class MainActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
                 View rootView = view.getRootView();
                 rootView.setBackgroundColor(colorInts[i]);
+                view.setBackgroundColor(Color.WHITE);
 
             }
 
